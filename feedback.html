@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        form {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .col1,
+        .col2,
+        .col3 {
+            display: flex;
+            flex-direction: column;
+            gap: 70px;
+            margin-top: 20px;
+        }
+
+        .tel {
+            display: flex;
+        }
+
+        .tel>select {
+            border-radius: 0;
+            width: 65px;
+        }
+
+        input {
+            width: 200px;
+            height: 40px;
+            padding-left: 10px;
+        }
+
+        .col1 select,
+        .col2 select,
+        .col3 select {
+
+            padding: 10px;
+        }
+
+        .col4 {
+
+            margin-left: 376px;
+            margin-top: 70px;
+            width: 784px;
+        }
+
+        textarea {
+            height: 80px;
+            width: 775px;
+            padding: 3px;
+        }
+
+        p {
+            margin-left: 250px;
+        }
+
+        button {
+            margin-left: 92%;
+            margin-top: 20px;
+            padding: 10px 30px;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button a {
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .drop {
+
+            height: 300px;
+            width: 500px;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            border-radius: 10px;
+            position: absolute;
+            top: 629px;
+            left: 628px;
+            background-color: white;
+            visibility: hidden;
+        }
+
+        .drop span,
+        .drop2 span {
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .drop span:hover,
+        .drop2 span:hover {
+            background-color: lightgrey;
+            font-weight: bold;
+            color: brown;
+        }
+
+        .desti {
+            cursor: pointer;
+        }
+
+        .icon {
+
+            position: absolute;
+            top: 640px;
+            left: 1110px;
+            z-index: 1;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .icon:hover {
+            border-radius: 50%;
+            background-color: lightgray;
+        }
+
+        .drop img,
+        .drop2 img {
+            width: 200px;
+        }
+
+        .drop2 {
+
+            height: 300px;
+            width: 500px;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            border-radius: 10px;
+            position: absolute;
+            top: 629px;
+            left: 937px;
+            background-color: white;
+            visibility: hidden;
+        }
+
+        .drop span {
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .drop span:hover {
+            background-color: lightgrey;
+            font-weight: bold;
+            color: brown;
+        }
+
+        .icon1 {
+
+            position: absolute;
+            top: 640px;
+            left: 1420px;
+            z-index: 1;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .icon1:hover {
+            border-radius: 50%;
+            background-color: lightgray;
+        }
+
+        .btn {
+            margin-left: 46%;
+            border-radius: 10px;
+            font-size: 18px;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        .btn:hover {
+            background-color: aqua;
+
+        }
+
+        .feedback-image {
+            margin-top: 20px;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            margin-left: 10px;
+            text-decoration: underline;
+        }
+
+        p {
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: brown;
+        }
+
+        input,
+        select,
+        .col4 {
+            border: 2px solid black;
+        }
+
+        footer img {
+
+            margin-top: 20px;
+            width: 100vw;
+        }
+        .phone{
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            position: absolute;
+            top:74%;
+            left:40.7%;
+            border: 2px solid black;
+            padding: 5px;
+            gap:10px;
+            border-radius: 10px;
+            cursor: pointer;
+            max-height: 200px;
+            overflow-x:hidden;
+            visibility: hidden;
+        }
+        .Tel{
+
+            height:40px;
+            width:70px;
+            border: 2px solid black;
+            border-right: none;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: lightgray;
+        }
+        .icon3{
+            font-size: 15px;
+            text-align: end;
+            cursor: pointer;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        .icon4{
+            margin-left: 130px;
+        }
+        .down{
+
+            position: absolute;
+            top:69%;
+            left:44%;
+            visibility: hidden;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .phone span:hover{
+            color:brown;
+            font-weight: bold;
+        }
+        .val1{
+            position: absolute;
+            top:73%;
+            left:25%;
+            margin-top: 8px;
+            visibility: hidden;
+        }
+        .val2{
+            
+            position: absolute;
+            top:73%;
+            left:41.5%;
+            margin-top: 8px;
+            visibility: hidden;
+        }
+        .val3{
+            position: absolute;
+            top:73%;
+            left:63%;
+            margin-top: 8px;
+            visibility: hidden;
+        }
+        .val4{
+            position: absolute;
+            top:89%;
+            left:41.5%;
+            margin-top: 8px;
+            visibility: hidden;
+        }
+        .val5{
+            position: absolute;
+            top:89%;
+            left:63%;
+            margin-top: 8px;
+            visibility: hidden;
+        }
+        .val6{
+            position: absolute;
+            top:103.8%;
+            left:25%;
+            margin-top: 8px;   
+            visibility: hidden;
+        }
+        .val7{
+            position: absolute;
+            top:126.5%;
+            left:25%;
+            margin-top: 8px;
+            visibility: hidden;  
+        }
+        .clicked::placeholder{
+            color:red;
+        }
+    </style>
+    <script src="index.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <button><a href="new.html" class="home">Home</a></button>
+    <h1>Feedback Form</h1>
+    <img src="feed.png" alt="Feedback" class="feedback-image">
+    <div class="container">
+        <p>Dear Dream Flights Customer, please select the most suitable option from the drop-down list.</p>
+        <form>
+            <div class="col1">
+                <input type="text" placeholder="Name*" class="inp5" value="">
+                <input type="text" placeholder="PNR No" class="inp6">
+                <select style="border-radius:0" class="sel1" value=''>
+                    <option class="sel2" selected>Voice Of Coustomer*</option>
+                    <option>FeedBack</option>
+                    <option>Appreciation</option>
+                    <option>Suggestion</option>
+                    <option>Complaint</option>
+                    <option>Request</option>
+                    <option>Enquiry</option>
+                </select>
+            </div>
+            <div class="col2">
+                <div class="tel">
+                    <div class="Tel">
+                        <span style="font-size:18px;font-weight:bold;color:darkgreen" class="Span">+91</span>
+                        <ion-icon name="chevron-down-outline" class="icon3"></ion-icon>
+                    </div>
+                    <input id="phone" type="text" placeholder="Phone*" class="inp7" value="">
+                </div>
+                <input style="width:273px;" class="origin" placeholder="Origin Airport City" value="">
+                <select style="border-radius:0" class="op9" disabled>
+                    <option class="sel2" selected>Coustomer Touch Point*</option>
+                    <option>Airport Services FAQS</option>
+                    <option>Inflight Services FAQS</option>
+                    <option>Digital/Website FAQS</option>
+                    <option>Flight Schedule FAQS</option>
+                </select>
+            </div>
+            <div class="col3">
+                <input type="text" placeholder="Email*" class="inp8" value="">
+                <input type="text" placeholder="Destination Airport City" class="desti" value="">
+                <select style="border-radius:0" class="op10" disabled>
+                    <option class="op1" selected>Reason*</option>
+                    <option class="op2">Baggage</option>
+                    <option class="op3">Flight Missed</option>
+                    <option class="op4">Staff Related</option>
+                    <option class="op6">Special Assistance</option>
+                </select>
+            </div>
+        </form>
+        <div class="col4">
+            <textarea placeholder="Description*"></textarea>
+        </div>
+        <ion-icon name="close-outline" class="icon" onclick="Closed()"></ion-icon>
+        <div class="drop">
+            <img src="img5.png">
+            <span>Adolfo Suárez Madrid–Barajas Airport (MAD) - Madrid, Spain</span>
+            <span>Amsterdam Airport Schiphol (AMS) - Amsterdam, Netherlands</span>
+            <span>Biju Patnaik International Airport (BBI) - Bhubaneswar</span>
+            <span>Beijing Capital International Airport (PEK) - Beijing, China</span>
+            <span>Changi Airport (SIN) - Singapore</span>
+            <span>Charles de Gaulle Airport (CDG) - Paris, France</span>
+            <span>Chennai International Airport (MAA) - Chennai</span>
+            <span>Chhatrapati Shivaji Maharaj International Airport (BOM) - Mumbai</span>
+            <span>Cochin International Airport (COK) - Kochi</span>
+            <span>Devi Ahilya Bai Holkar Airport (IDR) - Indore</span>
+            <span>Dr. Babasaheb Ambedkar International Airport (NAG) - Nagpur</span>
+            <span>Dubai International Airport (DXB) - Dubai, United Arab Emirates</span>
+            <span>Frankfurt Airport (FRA) - Frankfurt, Germany</span>
+            <span>Goa International Airport (GOI) - Goa</span>
+            <span>Hong Kong International Airport (HKG) - Hong Kong</span>
+            <span>Indira Gandhi International Airport (DEL) - New Delhi</span>
+            <span>Jolly Grant Airport (DED) - Dehradun</span>
+            <span>Jaipur International Airport (JAI) - Jaipur</span>
+            <span>Kempegowda International Airport (BLR) - Bengaluru</span>
+            <span>Lal Bahadur Shastri International Airport (VNS) - Varanasi</span>
+            <span>London Heathrow Airport (LHR) - London, United Kingdom</span>
+            <span>Los Angeles International Airport (LAX) - Los Angeles, United States</span>
+            <span>Lokpriya Gopinath Bordoloi International Airport (GAU) - Guwahati</span>
+            <span>Mangaluru International Airport (IXE) - Mangaluru</span>
+            <span>Munich Airport (MUC) - Munich, Germany</span>
+            <span>Narita International Airport (NRT) - Tokyo, Japan</span>
+            <span>Netaji Subhas Chandra Bose International Airport (CCU) - Kolkata</span>
+            <span>O'Hare International Airport (ORD) - Chicago, United States</span>
+            <span>Rajiv Gandhi International Airport (HYD) - Hyderabad</span>
+            <span>San Francisco International Airport (SFO) - San Francisco, United States</span>
+            <span>Sardar Vallabhbhai Patel International Airport (AMD) - Ahmedabad</span>
+            <span>Shanghai Pudong International Airport (PVG) - Shanghai, China</span>
+            <span>Sri Guru Ram Dass Jee International Airport (ATQ) - Amritsar</span>
+            <span>Suvarnabhumi Airport (BKK) - Bangkok, Thailand</span>
+            <span>Sydney Kingsford Smith Airport (SYD) - Sydney, Australia</span>
+            <span>Tiruchirappalli International Airport (TRZ) - Tiruchirappalli</span>
+            <span>Toronto Pearson International Airport (YYZ) - Toronto, Canada</span>
+            <span>Vienna International Airport (VIE) - Vienna, Austria</span>
+            <span>Zurich Airport (ZRH) - Zurich, Switzerland</span>
+        </div>
+        <ion-icon name="close-outline" class="icon1" onclick="Closed1()"></ion-icon>
+        <div class="drop2">
+            <img src="img5.png">
+            <span>Adolfo Suárez Madrid–Barajas Airport (MAD) - Madrid, Spain</span>
+            <span>Amsterdam Airport Schiphol (AMS) - Amsterdam, Netherlands</span>
+            <span>Biju Patnaik International Airport (BBI) - Bhubaneswar</span>
+            <span>Beijing Capital International Airport (PEK) - Beijing, China</span>
+            <span>Changi Airport (SIN) - Singapore</span>
+            <span>Charles de Gaulle Airport (CDG) - Paris, France</span>
+            <span>Chennai International Airport (MAA) - Chennai</span>
+            <span>Chhatrapati Shivaji Maharaj International Airport (BOM) - Mumbai</span>
+            <span>Cochin International Airport (COK) - Kochi</span>
+            <span>Devi Ahilya Bai Holkar Airport (IDR) - Indore</span>
+            <span>Dr. Babasaheb Ambedkar International Airport (NAG) - Nagpur</span>
+            <span>Dubai International Airport (DXB) - Dubai, United Arab Emirates</span>
+            <span>Frankfurt Airport (FRA) - Frankfurt, Germany</span>
+            <span>Goa International Airport (GOI) - Goa</span>
+            <span>Hong Kong International Airport (HKG) - Hong Kong</span>
+            <span>Indira Gandhi International Airport (DEL) - New Delhi</span>
+            <span>Jolly Grant Airport (DED) - Dehradun</span>
+            <span>Jaipur International Airport (JAI) - Jaipur</span>
+            <span>Kempegowda International Airport (BLR) - Bengaluru</span>
+            <span>Lal Bahadur Shastri International Airport (VNS) - Varanasi</span>
+            <span>London Heathrow Airport (LHR) - London, United Kingdom</span>
+            <span>Los Angeles International Airport (LAX) - Los Angeles, United States</span>
+            <span>Lokpriya Gopinath Bordoloi International Airport (GAU) - Guwahati</span>
+            <span>Mangaluru International Airport (IXE) - Mangaluru</span>
+            <span>Munich Airport (MUC) - Munich, Germany</span>
+            <span>Narita International Airport (NRT) - Tokyo, Japan</span>
+            <span>Netaji Subhas Chandra Bose International Airport (CCU) - Kolkata</span>
+            <span>O'Hare International Airport (ORD) - Chicago, United States</span>
+            <span>Rajiv Gandhi International Airport (HYD) - Hyderabad</span>
+            <span>San Francisco International Airport (SFO) - San Francisco, United States</span>
+            <span>Sardar Vallabhbhai Patel International Airport (AMD) - Ahmedabad</span>
+            <span>Shanghai Pudong International Airport (PVG) - Shanghai, China</span>
+            <span>Sri Guru Ram Dass Jee International Airport (ATQ) - Amritsar</span>
+            <span>Suvarnabhumi Airport (BKK) - Bangkok, Thailand</span>
+            <span>Sydney Kingsford Smith Airport (SYD) - Sydney, Australia</span>
+            <span>Tiruchirappalli International Airport (TRZ) - Tiruchirappalli</span>
+            <span>Toronto Pearson International Airport (YYZ) - Toronto, Canada</span>
+            <span>Vienna International Airport (VIE) - Vienna, Austria</span>
+            <span>Zurich Airport (ZRH) - Zurich, Switzerland</span>
+        </div>
+        <button class="btn">Submit</button>
+    </div>
+    <div class="phone">
+        <span>India (+91)</span>
+        <span>United States (+1)</span>
+        <span>United Kingdom (+44)</span>
+        <span>Germany (+49)</span>
+        <span>China (+86)</span>
+        <!-- Added 20 more countries below -->
+        <span>Australia (+61)</span>
+        <span>Brazil (+55)</span>
+        <span>Canada (+1)</span>
+        <span>France (+33)</span>
+        <span>Italy (+39)</span>
+        <span>Japan (+81)</span>
+        <span>Mexico (+52)</span>
+        <span>Netherlands (+31)</span>
+        <span>Russia (+7)</span>
+        <span>Saudi Arabia (+966)</span>
+        <span>South Korea (+82)</span>
+        <span>Spain (+34)</span>
+        <span>Sweden (+46)</span>
+        <span>Switzerland (+41)</span>
+        <span>Turkey (+90)</span>
+        <!-- Adding 20 more countries -->
+        <span>Argentina (+54)</span>
+        <span>Austria (+43)</span>
+        <span>Belgium (+32)</span>
+        <span>Chile (+56)</span>
+        <span>Colombia (+57)</span>
+        <span>Czech Republic (+420)</span>
+        <span>Denmark (+45)</span>
+        <span>Egypt (+20)</span>
+        <span>Greece (+30)</span>
+        <span>Hong Kong (+852)</span>
+        <span>Hungary (+36)</span>
+        <span>India (+91)</span>
+        <span>Indonesia (+62)</span>
+        <span>Ireland (+353)</span>
+        <span>Israel (+972)</span>
+        <span>Malaysia (+60)</span>
+        <span>New Zealand (+64)</span>
+        <span>Norway (+47)</span>
+        <span>Poland (+48)</span>
+        <span>Portugal (+351)</span>
+    </div>
+    <ion-icon name="chevron-up-outline" class="down"></ion-icon>
+    <div class="val1">
+          <span>*Value is Required</span>
+    </div>
+    <div class="val2">
+          <span>*Value is Required</span>
+    </div>
+    <div class="val3">
+          <span>*Value is Required</span>
+    </div>
+    <div class="val4">
+          <span>*Value is Required</span>
+    </div>
+    <div class="val5">
+          <span>*Value is Required</span>
+    </div>
+    <div class="val6">
+          <span>*Value is Required</span>
+    </div>
+    <div class="val7">
+        <span>*Value is Required</span>
+  </div>
+    <footer>
+        <img src="foot.png">
+    </footer>
+    <script src="index1.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

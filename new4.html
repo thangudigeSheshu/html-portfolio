@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="date" value="">
+    <button>Submit</button>
+    <script>
+        let d = new Date();
+        let y = d.getFullYear()
+        let m = d.getMonth()+1
+        let d1 = d.getDate();
+        if(m < 10){
+            m = '0' + m
+        }
+        if(d < 10){
+            d = '0' + d
+        }
+        document.querySelector('input').value = d1 + " "+ m + " "+y
+        document.querySelector('button').addEventListener('click',()=>{
+            console.log(document.querySelector('input').value)
+        })
+
+    </script>
+</body>
+</html>

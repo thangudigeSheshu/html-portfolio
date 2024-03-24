@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Domestic &amp; International Flights at Lowest Airfare - Dream Flights</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            visibility: hidden;
+        }
+
+        .img {
+            background: url('pexels-pixabay-358319.jpg') no-repeat;
+            background-attachment: initial;
+            background-position: center;
+            background-size: cover;
+            height: 97.5vh;
+            width: 100%;
+            position: relative;
+            visibility: hidden;
+        }
+
+        nav {
+
+            position: absolute;
+            top: 37px;
+            left: 10px;
+            font-size: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-left: 40px;
+        }
+
+        nav>p {
+            font-family: cursive;
+            font-size: 20px;
+            text-transform: uppercase;
+            color: darkgreen;
+        }
+
+        .img2 {
+
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+        }
+
+        ul {
+
+            display: flex;
+            gap: 60px;
+            margin-left: 640px;
+            margin-right: 30px;
+            list-style: none;
+            cursor: pointer;
+        }
+
+        .drop1:hover,
+        .drop2:hover,
+        .drop3:hover {
+
+            color: brown;
+            transition: ease-in-out;
+            font-weight: bold;
+        }
+
+        .book {
+
+            position: absolute;
+            top: 75px;
+            right: 545px;
+            background-color: whitesmoke;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+            height: 120px;
+            width: 300px;
+            visibility: hidden;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .book p {
+            font-size: 15px;
+        }
+
+        .book p:hover {
+
+            color: darkred;
+            font-weight: bold;
+        }
+
+        .drop1 {
+            position: absolute;
+            top: 13px;
+            right: 493px;
+        }
+
+        .drop2 {
+            position: absolute;
+            top: 13px;
+            right: 113px;
+        }
+
+        .before {
+
+            position: absolute;
+            top: 64px;
+            right: 546px;
+            border-bottom: 100px solid #fff;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            visibility: hidden;
+        }
+
+        .dropd1 {
+
+            position: absolute;
+            top: 5px;
+            right: 7px;
+        }
+
+        .dropd1:hover {
+            border-radius: 50%;
+            background-color: lightgray;
+            color: darkmagenta;
+        }
+
+        .info {
+
+            position: absolute;
+            top: 76px;
+            display: flex;
+            flex-direction: column;
+            right: 155px;
+            height: 150px;
+            width: 240px;
+            background-color: white;
+            gap: 10px;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 10px;
+            visibility: hidden;
+        }
+
+        .info a {
+
+            text-decoration: none;
+            color: black;
+        }
+
+        .info a:hover {
+
+            font-weight: bold;
+            color: brown;
+        }
+
+        .before1 {
+
+            position: absolute;
+            top: 63px;
+            right: 159px;
+            border-bottom: 100px solid #fff;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            visibility: hidden;
+        }
+
+        .cont1 {
+            position: absolute;
+            top: 80px;
+            background-color: black;
+            color: white;
+            width: 100vw;
+            height: 50px;
+        }
+
+        .cont2 {
+            margin-top: 7px;
+            margin-left: 200px;
+            font-size: 30px;
+            word-spacing: 10px;
+            animation: Topic 11s infinite linear;
+            transition: 11s linear ease-in-out;
+            color: blanchedalmond;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        @keyframes Topic {
+            0% {
+                transform: translateX(1350px);
+                color: darksalmon
+            }
+
+            75% {
+
+                color: darkcyan;
+            }
+
+            100% {
+                transform: translateX(-1350px);
+                color: darkkhaki;
+            }
+        }
+
+        footer {
+            background-color: darkblue;
+        }
+
+        footer span {
+
+            margin-left: 600px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .discount {
+            position: absolute;
+            top: 0;
+            padding: 5px 0;
+            width: 100%;
+            font-weight: bold;
+            background-color: bisque;
+            font-size: 20px;
+        }
+
+        .discount span {
+            margin-left: 300px;
+        }
+
+        .dis1 {
+            position: absolute;
+            right: 100px;
+            top: 5px;
+            font-weight: bold;
+        }
+
+        .img1 {
+
+            position: absolute;
+            top: 22%;
+            height: 500px;
+            width: 700px;
+            left: 28%;
+        }
+
+        .off1 {
+
+            position: absolute;
+            top: 172px;
+            left: 969px;
+            font-weight: bolder;
+        }
+
+        .off1:hover {
+            background-color: darkcyan;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .cont4 {
+
+            position: absolute;
+            top: 150px;
+            left: 20px;
+            font-size: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .hours,
+        .min,
+        .sec,
+        .date2,
+        .month,
+        .year {
+            font-weight: bold;
+        }
+
+        .pre {
+            position: absolute;
+            top: 300px;
+            height: 100px;
+            width: 100px;
+            left: 720px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img"></div>
+    <!-- Add a preloader div -->
+    <div class="preloader">
+        <img src="img111.gif" class="pre">
+    </div>
+    <!-- Add a container div to hold the content -->
+    <div class="container">
+        <div class="cont4">
+            <div class="date">
+                <span class="date2">00</span>
+                <span>-</span>
+                <span class="month">Feb</span>
+                <span>-</span>
+                <span class="year">2024</span>
+            </div>
+            <span>[</span>
+            <span class="hours">00</span>
+            <span>:</span>
+            <span class="min">00</span>
+            <span>:</span>
+            <span class="sec">00</span>
+            <span>]</span>
+        </div>
+        <div class="discount"><span class="info1">Get up to 10% discount with ‘6Exclusive’ Special Fare on travel date
+                beyond
+                28-February-2024</span>
+            <ion-icon name="close-outline" class="dis1" style="font-size:25px;cursor:pointer;"
+                onclick="discount()"></ion-icon>
+        </div>
+        <div class="cont1">
+            <div class="cont2">
+                Welcome to Dream Flights Online Ticket Booking
+            </div>
+        </div>
+        <nav class="nav">
+            <p>Dream Flights</p>
+            <img src="img1.png" class="img2">
+            <ul>
+                <li>Book
+                    <ion-icon name="chevron-down-outline" style="font-size: 17px;cursor:pointer;" class="drop1"
+                        onclick="drop1()"></ion-icon>
+                </li>
+                <li>Cheak in</li>
+                <li>6E Rewards</li>
+                <li>Info
+                    <ion-icon name="chevron-down-outline" style="font-size: 17px;cursor:pointer;" class="drop2"
+                        onclick="Info()"></ion-icon>
+                </li>
+                <li>More</li>
+            </ul>
+        </nav>
+        <div class="before"></div>
+        <div class="book">
+            <ion-icon name="close-outline" class="dropd1" style="font-size:17px;" onclick="drop2()"></ion-icon>
+            <p>Single Booking</p>
+            <p>Student Booking</p>
+            <p>Family Booking</p>
+            <p>Senior Citizen Booking</p>
+        </div>
+        <div class="before1"></div>
+        <div class="info">
+            <ion-icon name="close-outline" class="dropd1" style="font-size:17px;cursor:pointer;"
+                onclick="Info1()"></ion-icon>
+            <a href="luggage.html" onload="load()">Luggage Information</a>
+            <a href="feedback.html">FeedbBack Form</a>
+            <a href="#">Cabin Bag</a>
+            <a href="#">Contact(with Phone Number)</a>
+            <a href="#">Contact(with Email)</a>
+        </div>
+        <footer>
+            <span>Copyright &copy; 2024 Dream Flights. All rights reserved.</span>
+        </footer>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

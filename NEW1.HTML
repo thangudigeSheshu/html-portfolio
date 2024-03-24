@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOK</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            font-weight: bold;
+        }
+
+        .cont {
+
+            height: 200px;
+            width: 97vw;
+            border: 2px solid black;
+            position: relative;
+        }
+
+        .up {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            font-size: 16px;
+            margin-left: 15px;
+            margin-top: 10px;
+        }
+
+        .In {
+
+            margin-left: 84.5%;
+        }
+
+        .down {
+            margin-top: 6px;
+            font-size: 10px;
+        }
+
+        .up1 {
+            display: flex;
+            gap: 5px;
+        }
+
+
+        #arrow {
+
+            margin-top: 2px;
+        }
+
+        .Way {
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: white;
+            border: 2px solid black;
+            padding: 10px;
+            position: absolute;
+            left: 60px;
+            top: 145px;
+            border-radius: 10px;
+            cursor: pointer;
+            visibility: hidden;
+        }
+
+        .cross {
+            margin-left: 90px;
+            border: 2px solid black;
+            border-radius: 50%;
+        }
+
+        .sec,
+        .sec1 {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            margin-left: 70px;
+            margin-top: 40px;
+        }
+
+        .sec1 {
+            margin-top: -42px;
+            margin-left: 50px;
+        }
+
+        .sec1 {
+            visibility: hidden;
+        }
+
+        .inp,
+        .inp1 {
+            padding: 15px;
+            width: 250px;
+            border-radius: 5px;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+
+        .swap,
+        .swap1 {
+            font-size: 20px;
+            margin-top: 10px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .swap:hover,
+        .swap1:hover {
+
+            background-color: lightgray;
+            border-radius: 50%;
+
+        }
+
+        .date,
+        .date1 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .date {
+            visibility: hidden;
+            width: 270px;
+            border-radius: 10px;
+            margin-left: 38px;
+        }
+
+        .date1 {
+            margin-left: 60px;
+            width: 200px;
+            border-radius: 10px;
+        }
+
+        #dd {
+            margin-left: 40px;
+        }
+
+        button {
+            width: 300px;
+            font-size: 20px;
+            background-color: blue;
+            color: white;
+            padding: 2px;
+            border: 2px solid black;
+            margin-left: 35px;
+            border-radius: 10px;
+        }
+
+        .From {
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: white;
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            max-height: 390px;
+            margin-left: 40px;
+            position: absolute;
+            left: 50px;
+            top: 250px;
+            visibility: hidden;
+        }
+
+        .From1 {
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: white;
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            max-height: 390px;
+            margin-left: 40px;
+            position: absolute;
+            left: 430px;
+            top: 250px;
+            visibility: hidden;
+        }
+
+        .cross1,
+        .cross2 {
+            position: absolute;
+            top: 10px;
+            left: 610px;
+        }
+
+        .cross1:hover,
+        .cross2:hover {
+            background-color: lightgray;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .From span,
+        .From1 span {
+            cursor: pointer;
+        }
+
+        .From span:hover,
+        .From1 span:hover {
+            font-weight: bold;
+            color: blue;
+            font-size: 17px;
+        }
+
+        .T {
+            position: absolute;
+            top: 57.5px;
+            left: 810px;
+            background-color: white;
+            visibility: visible;
+        }
+
+        .Y1 {
+            position: absolute;
+            top: 57.5px;
+            left: 800px;
+            visibility: hidden;
+            background-color: white;
+        }
+
+        .bef {
+            position: absolute;
+            top: 29%;
+            left: 56%;
+            background-color: white;
+        }
+        .bef1{
+            position: absolute;
+            top:32%;
+            left:53%;
+            background-color: white;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>FLIGHT BOOKING</h1>
+    <div class="cont">
+        <div class="up">
+            <div class="up1">
+                <ion-icon name="arrow-forward-outline" id="arrow"></ion-icon>
+                <span class="One">One Way</span>
+                <ion-icon name="caret-down-outline" class="down" id="down1" style="cursor:pointer;"></ion-icon>
+            </div>
+            <span class="In">Indian Rupee</span>
+            <ion-icon name="caret-down-outline" class="down" id="down2"></ion-icon>
+        </div>
+        <div class="sec">
+            <input type="text" placeholder="From" class="inp">
+            <ion-icon name="swap-horizontal-outline" class="swap"></ion-icon>
+            <input type="text" placeholder="To" class="inp" id="Inp">
+            <div class="date1" style="border:2px solid black;">
+                <input type="date" placeholder="" style="border:none" id="dd">
+            </div>
+            <button>Search Flight</button>
+        </div>
+        <div class="bef">
+            <span>Travel Date</span>
+        </div>
+        <div class="sec1">
+            <input type="text" placeholder="From" class="inp1">
+            <ion-icon name="swap-horizontal-outline" class="swap1"></ion-icon>
+            <input type="text" placeholder="To" class="inp" id="Inp1">
+            <div class="date" style="border:2px solid black;">
+                <input type="date" placeholder="" style="border:none;" id="D1">
+                <label for="" style="font-weight:bolder;font-size:20px;">-</label>
+                <input type="date" placeholder="" style="border:none">
+            </div>
+            <div class="bef1">
+                <span>Travel Date</span>
+            </div>
+            <button>Search Flight</button>
+        </div>
+    </div>
+    <div class="Way">
+        <ion-icon name="close-outline" class="cross"></ion-icon>
+        <span>One Way</span>
+        <span>Round Trip</span>
+    </div>
+    <div class="From">
+        <ion-icon name="close-outline" class="cross1"></ion-icon>
+        <img src="img55.png">
+        <span value=''>Abu Dhabi International Airport (AUH) - Abu Dhabi</span>
+        <span value=''>Ahmedabad Airport (AMD) - Ahmedabad</span>
+        <span value=''>Amritsar Sri Guru Ram Dass Jee International Airport (ATQ) - Amritsar</span>
+        <span value=''>Bagdogra Airport (IXB) - Bagdogra</span>
+        <span value=''>Bengaluru Kempegowda International Airport (BLR) - Bengaluru</span>
+        <span value=''>Bhopal Raja Bhoj Airport (BHO) - Bhopal</span>
+        <span value=''>Bhubaneswar Biju Patnaik International Airport (BBI) - Bhubaneswar</span>
+        <span value=''>Birsa Munda Airport (IXR) - Ranchi</span>
+        <span value=''>Chandigarh Airport (IXC) - Chandigarh</span>
+        <span value=''>Chennai International Airport (MAA) - Chennai</span>
+        <span value=''>Chhatrapati Shivaji Maharaj International Airport (BOM) - Mumbai</span>
+        <span value=''>Chaudhary Charan Singh International Airport (LKO) - Lucknow</span>
+        <span value=''>Cochin International Airport (COK) - Kochi</span>
+        <span value=''>Dr. Babasaheb Ambedkar International Airport (NAG) - Nagpur</span>
+        <span value=''>Goa International Airport (GOI) - Goa</span>
+        <span value=''>Hamad International Airport (DOH) - Doha</span>
+        <span value=''>Hong Kong International Airport (HKG) - Hong Kong</span>
+        <span value=''>Hyderabad Rajiv Gandhi International Airport (HYD) - Hyderabad</span>
+        <span value=''>Indira Gandhi International Airport (DEL) - Delhi</span>
+        <span value=''>Incheon International Airport (ICN) - Seoul</span>
+        <span value=''>Jaipur International Airport (JAI) - Jaipur</span>
+        <span value=''>John F. Kennedy International Airport (JFK) - New York</span>
+        <span value=''>Kempegowda International Airport Bengaluru (BLR) - Bengaluru</span>
+        <span value=''>Kolkata Netaji Subhas Chandra Bose International Airport (CCU) - Kolkata</span>
+        <span value=''>Kochi Cochin International Airport (COK) - Kochi</span>
+        <span value=''>Lucknow Chaudhary Charan Singh International Airport (LKO) - Lucknow</span>
+        <span value=''>Mumbai Chhatrapati Shivaji Maharaj International Airport (BOM) - Mumbai</span>
+        <span value=''>Nagpur Dr. Babasaheb Ambedkar International Airport (NAG) - Nagpur</span>
+        <span value=''>Patna Lok Nayak Jayaprakash Airport (PAT) - Patna</span>
+        <span value=''>Pune Pune Airport (PNQ) - Pune</span>
+        <span value=''>Ranchi Birsa Munda Airport (IXR) - Ranchi</span>
+        <span value=''>Srinagar Sheikh ul-Alam International Airport (SXR) - Srinagar</span>
+        <span value=''>Thiruvananthapuram Trivandrum International Airport (TRV) - Thiruvananthapuram</span>
+    </div>
+    <div class="From1">
+        <ion-icon name="close-outline" class="cross2"></ion-icon>
+        <img src="img55.png">
+        <span value=''>Abu Dhabi International Airport (AUH) - Abu Dhabi</span>
+        <span value=''>Ahmedabad Airport (AMD) - Ahmedabad</span>
+        <span value=''>Amritsar Sri Guru Ram Dass Jee International Airport (ATQ) - Amritsar</span>
+        <span value=''>Bagdogra Airport (IXB) - Bagdogra</span>
+        <span value=''>Bengaluru Kempegowda International Airport (BLR) - Bengaluru</span>
+        <span value=''>Bhopal Raja Bhoj Airport (BHO) - Bhopal</span>
+        <span value=''>Bhubaneswar Biju Patnaik International Airport (BBI) - Bhubaneswar</span>
+        <span value=''>Birsa Munda Airport (IXR) - Ranchi</span>
+        <span value=''>Chandigarh Airport (IXC) - Chandigarh</span>
+        <span value=''>Chennai International Airport (MAA) - Chennai</span>
+        <span value=''>Chhatrapati Shivaji Maharaj International Airport (BOM) - Mumbai</span>
+        <span value=''>Chaudhary Charan Singh International Airport (LKO) - Lucknow</span>
+        <span value=''>Cochin International Airport (COK) - Kochi</span>
+        <span value=''>Dr. Babasaheb Ambedkar International Airport (NAG) - Nagpur</span>
+        <span value=''>Goa International Airport (GOI) - Goa</span>
+        <span value=''>Hamad International Airport (DOH) - Doha</span>
+        <span value=''>Hong Kong International Airport (HKG) - Hong Kong</span>
+        <span value=''>Hyderabad Rajiv Gandhi International Airport (HYD) - Hyderabad</span>
+        <span value=''>Indira Gandhi International Airport (DEL) - Delhi</span>
+        <span value=''>Incheon International Airport (ICN) - Seoul</span>
+        <span value=''>Jaipur International Airport (JAI) - Jaipur</span>
+        <span value=''>John F. Kennedy International Airport (JFK) - New York</span>
+        <span value=''>Kempegowda International Airport Bengaluru (BLR) - Bengaluru</span>
+        <span value=''>Kolkata Netaji Subhas Chandra Bose International Airport (CCU) - Kolkata</span>
+        <span value=''>Kochi Cochin International Airport (COK) - Kochi</span>
+        <span value=''>Lucknow Chaudhary Charan Singh International Airport (LKO) - Lucknow</span>
+        <span value=''>Mumbai Chhatrapati Shivaji Maharaj International Airport (BOM) - Mumbai</span>
+        <span value=''>Nagpur Dr. Babasaheb Ambedkar International Airport (NAG) - Nagpur</span>
+        <span value=''>Patna Lok Nayak Jayaprakash Airport (PAT) - Patna</span>
+        <span value=''>Pune Pune Airport (PNQ) - Pune</span>
+        <span value=''>Ranchi Birsa Munda Airport (IXR) - Ranchi</span>
+        <span value=''>Srinagar Sheikh ul-Alam International Airport (SXR) - Srinagar</span>
+        <span value=''>Thiruvananthapuram Trivandrum International Airport (TRV) - Thiruvananthapuram</span>
+    </div>
+    <script src="book.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
